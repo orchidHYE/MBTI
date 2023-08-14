@@ -1,0 +1,18 @@
+package com.pro.mbti.infp.domain.board;
+
+import java.util.Date;
+
+public class InfpBoardDTO {
+	
+	private int infpBoardNo;
+	private String memberNick;
+	private String infpBoardTitle;
+	private String infpBoardDetail;
+	private String infpBoardFile;
+	private Date infpBoardDate;
+	private int infpBoardHit;
+	private int infpBoardLike;
+	
+	
+
+}

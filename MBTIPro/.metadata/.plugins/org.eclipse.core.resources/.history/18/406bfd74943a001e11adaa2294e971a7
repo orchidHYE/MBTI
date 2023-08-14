@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<!-- 규칙.클래스이름 그대로 alias 설정하기~ -->
+	<typeAliases>						
+		<typeAlias alias="MemberDTO" type="com.pro.mbti.member.domain.MemberDTO"/>
+  		<typeAlias alias="INTJBoardDTO" type="com.pro.mbti.intj.domain.board.INTJBoardDTO"></typeAlias> -->
+<!--		<typeAlias alias="INFPBoardDTO" type="com.pro.mbti.infp.domain.board.INFPBoardDTO"/> 
+	</typeAliases>
+</configuration>

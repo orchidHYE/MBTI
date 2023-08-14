@@ -1,0 +1,5 @@
+package com.pro.mbti.infp.domain.board;
+
+public class InfpBoardDTO {
+
+}
