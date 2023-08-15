@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ISTP">
+	<!-- ISTPBoard 게시글 수 조회 -->
+	<select id="">
+	<![CDATA[
+	SELECT COUNT(ISTPBoardNo)
+	FROM ISTPBoard
+	]]>
+	</select>
+	
+	<!-- ISTP게시판 목록 전체조회 -->
+	<select id="selectISTPBoardList" resultType="hashmap">
+	<![CDATA[
+	SELECT ISTPBoardNo, memberNick, ISTPBoardTitle, ISTPBoardDetail, ISTPBoardFile, ISTPBoardDate, ISTPBoardHit, ISTPBoardLike
+	FROM ISTPBoard
+	ORDER BY ISTPBoardNo DESC
+	]]>
+	</select>
+	
+	<!-- ISTP게시판 게시글 상세조회 -->
+	<select id="selectISTPBoardDetail" resultType="com.pro.mbti.istp.board.domain.ISTPBoardDTO" parameterType="int">
+	<![CDATA[
+	SELECT ISTPBoardNo, memberNick, ISTPBoardTitle, ISTPBoardDetail, ISTPBoardFile, ISTPBoardDate, ISTPBoardHit, ISTPBoardLike
+	FROM ISTPBoard
+	WHERE ISTPBoardNo=#{istpBoardNo}
+	]]>
+	</select>
+	
+	<!-- ISTP게시판 게시글 클릭시 조회수 증가  -->
+	<update id="updateISTPBoardHit" parameterType="int">
+	<![CDATA[
+	UPDATE ISTPBoard
+	SET ISTPBoardHit = ISTPBoardHit +1
+	WHERE ISTPBoardNo =#{istpBoardNo}
+	]]>
+	</update>
+	
+</mapper>
