@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+          "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="INFPBoard">
+	<!-- 게시글 등록 -->
+	<insert id="insertINFPBoard" parameterType="com.pro.mbti.domain.INFPBoardDTO">
+	  <![CDATA[
+		insert into INFPBoard (memberNick, INFPBoardTitle, INFPBoardDetail, INFPBoardFile)
+		values (#{memberNick}, #{infpBoardTitle}, #{infpBoardDetail}, #{infpBoardFile})
+	  ]]>
+	</insert>
+	<!-- 전체 게시글 수 조회 -->
+	<select id="totalINFPBoardCNT" resultType="int">
+	  <![CDATA[
+	  	select count(INFPBoardNo) from INFPBoard
+	  ]]>
+	</select>
+	<!-- 목록 조회 -->
+	<select id="selectINFPBoardList" parameterType="int" resultType="com.pro.mbti.domain.INFPBoardDTO">
+	  <![CDATA[
+		select INFPBoardNo, memberNick, INFPBoardTitle, INFPBoardDate, INFPBoardHit, INFPBoardLike
+		from INFPBoard
+		order by INFPBoardNo desc limit ?,?
+	  ]]>
+	</select>
+	<!-- 상세 글 조회 -->
+	<select id="selectINFPBoardDetail" resultType="com.pro.mbti.domain.INFPBoardDTO">
+	  <![CDATA[
+	  	select INFPBoardNo, memberNick, INFPBoardTitle, INFPBoardDetail, INFPBoardFile, INFPBoardDate, INFPBoardHit, INFPBoardLike
+		from INFPBoard
+	  ]]>
+	</select>
+</mapper>

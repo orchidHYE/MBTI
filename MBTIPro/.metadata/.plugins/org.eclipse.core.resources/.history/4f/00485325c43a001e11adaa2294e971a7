@@ -1,0 +1,5 @@
+package com.pro.mbti.infp.repository.board;
+
+public interface INFPBoardRepository {
+
+}
