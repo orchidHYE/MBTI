@@ -1,7 +1,0 @@
-package com.pro.mbti.infp.service.board;
-
-import com.pro.mbti.infp.repository.board.INFPBoardRepository;
-
-public class INFPBoardServiceImpl implements INFPBoardRepository {
-
-}

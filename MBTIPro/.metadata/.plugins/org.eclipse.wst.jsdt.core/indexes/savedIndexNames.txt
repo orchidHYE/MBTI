@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+C:\MBTI\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1917287050.index
-1568080838.index
-3336798281.index
-54367216.index
-1570484283.index
-830205628.index
-1630816506.index
-4264823241.index
