@@ -12,13 +12,21 @@
 				order by INTJBoardNo desc
 	 		]]>
 	</select>
-
-	<insert id="insertINTJBoardList" parameterType="com.pro.mbti.intj.domain.board.INTJBoardDTO" useGeneratedKeys="true" keyProperty="INTJBoardNo">
+	<!--INTJ게시판 게시글 작성 -->
+	<insert id="insertINTJBoardList" parameterType="com.pro.mbti.intj.domain.board.INTJBoardDTO">
 			<![CDATA[
-				insert into INTJBoard(
-				memberNick,INTJBoardTitle,INTJBoardDetail,INTJBoardFile,INTJBoardDate,INTJBoardHit,INTJBoardLike)
-				values(#{memberNick},#{INTJBoardTitle},#{INTJBoardDetail},#{INTJBoardFile},sysdate(),0,0)
+				insert into INTJBoard(memberNick,INTJBoardTitle,INTJBoardDetail)
+				values(#{memberNick},#{INTJBoardTitle},#{INTJBoardDetail})
 			]]>
 	</insert>
-
+	
+	<!--INTJ게시판 게시글 상세보기-->
+	<select id="readINTJList"
+		resultType="com.pro.mbti.intj.domain.board.INTJBoardDTO">
+			<![CDATA[
+				select INTJBoardNo,memberNick,INTJBoardTitle,INTJBoardDate,INTJBoardLike,INTJBoardHit
+				from INTJBoard
+				where INTJBoardNo = #{INTJBoardNo}
+	 		]]>
+	</select>
 </mapper>

@@ -1,7 +1,8 @@
 package com.pro.mbti.intj.domain.board;
 
-import java.util.Arrays;
 import java.util.Date;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pro.mbti.member.domain.MemberDTO;
 
@@ -10,7 +11,7 @@ public class INTJBoardDTO {
 	private String memberNick;
 	private String INTJBoardTitle;
 	private String INTJBoardDetail;
-	private String[] INTJBoardFile;
+	private MultipartFile INTJBoardFile;
 	private Date INTJBoardDate;
 	private int INTJBoardHit;
 	private int INTJBoardLike;
@@ -24,7 +25,7 @@ public class INTJBoardDTO {
 	}
 
 	public INTJBoardDTO(int INTJBoardNo, String memberNick, String INTJBoardTitle, String INTJBoardDetail,
-			String[] INTJBoardFile, Date INTJBoardDate, int INTJBoardHit, int INTJBoardLike, MemberDTO memberDTO) {
+			MultipartFile INTJBoardFile, Date INTJBoardDate, int INTJBoardHit, int INTJBoardLike, MemberDTO memberDTO) {
 		this.INTJBoardNo = INTJBoardNo;
 		this.memberNick = memberNick;
 		this.INTJBoardTitle = INTJBoardTitle;
@@ -76,11 +77,11 @@ public class INTJBoardDTO {
 		this.INTJBoardDetail = INTJBoardDetail;
 	}
 
-	public String[] getINTJBoardFile() {
+	public MultipartFile getINTJBoardFile() {
 		return INTJBoardFile;
 	}
 
-	public void setINTJBoardFile(String[] INTJBoardFile) {
+	public void setINTJBoardFile(MultipartFile INTJBoardFile) {
 		this.INTJBoardFile = INTJBoardFile;
 	}
 
@@ -111,12 +112,13 @@ public class INTJBoardDTO {
 	@Override
 	public String toString() {
 		return "INTJBoardDTO [INTJBoardNo=" + INTJBoardNo + ", memberNick=" + memberNick + ", INTJBoardTitle="
-				+ INTJBoardTitle + ", INTJBoardDetail=" + INTJBoardDetail + ", INTJBoardFile="
-				+ Arrays.toString(INTJBoardFile) + ", INTJBoardDate=" + INTJBoardDate + ", INTJBoardHit=" + INTJBoardHit
-				+ ", INTJBoardLike=" + INTJBoardLike + ", memberDTO=" + memberDTO + "]";
+				+ INTJBoardTitle + ", INTJBoardDetail=" + INTJBoardDetail + ", INTJBoardFile=" + INTJBoardFile
+				+ ", INTJBoardDate=" + INTJBoardDate + ", INTJBoardHit=" + INTJBoardHit + ", INTJBoardLike="
+				+ INTJBoardLike + ", memberDTO=" + memberDTO + "]";
 	}
-	
 
+
+	
 	
 	
 	

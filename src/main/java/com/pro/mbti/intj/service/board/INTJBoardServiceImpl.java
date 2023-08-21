@@ -23,7 +23,13 @@ public class INTJBoardServiceImpl implements INTJBoardService {
 	
 	//게시글 작성
 	@Override
-	public void insertINTJWrite(INTJBoardDTO INTJboardDTO){
-		INTJBoardRepository.insertINTJWrite(INTJboardDTO);
+	public int insertINTJWrite(INTJBoardDTO INTJboardDTO){
+		int result = INTJBoardRepository.insertINTJWrite(INTJboardDTO);
+		return result;
+	}
+	
+	//게시글 상세보기
+	public INTJBoardDTO read(int INTJBoardNo) {
+		return INTJBoardRepository.read(INTJBoardNo);
 	}
 }

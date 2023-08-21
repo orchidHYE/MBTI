@@ -12,6 +12,7 @@
 <body>
 <form id="mainForm" action="main" method="POST">
 	<h2>메인화면 폼</h2>
+	${AUTH_USER.nickname}
 		<div>
 			<input type="button" id="loginBtn" onclick="location.href='../member/login'" value="로그인하러가기" />
 		</div>

@@ -11,5 +11,8 @@ public interface INTJBoardService {
 	public List<INTJBoardDTO> selectINTJList() throws DataAccessException;
 	
 	//게시글 작성
-	public void insertINTJWrite(INTJBoardDTO INTJboardDTO) throws DataAccessException;
+	
+	public int insertINTJWrite(INTJBoardDTO INTJboardDTO) throws DataAccessException;
+	//게시물 상세내용 보기
+	public INTJBoardDTO read(int INTJBoardNo) throws DataAccessException;
 }

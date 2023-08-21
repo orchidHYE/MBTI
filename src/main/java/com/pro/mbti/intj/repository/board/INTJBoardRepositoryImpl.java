@@ -24,7 +24,13 @@ public class INTJBoardRepositoryImpl implements INTJBoardRepository {
 	
 	//게시글 작성
 	@Override
-	public void insertINTJWrite(INTJBoardDTO INTJboardDTO){
-		sqlSession.insert("INTJBoard.insertINTJBoardList", INTJboardDTO);
+	public int insertINTJWrite(INTJBoardDTO INTJboardDTO){
+		int result = sqlSession.insert("INTJBoard.insertINTJBoardList", INTJboardDTO);
+		return result;
+	}
+	
+	//게시글 상세보기
+	public INTJBoardDTO read(int INTJBoardNo) {
+		return sqlSession.selectOne("INTJBoard.readINTJList", INTJBoardNo);
 	}
 }
